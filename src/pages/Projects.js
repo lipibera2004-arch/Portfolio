@@ -1,4 +1,8 @@
-export default function Projects() {
+import React, { useState } from "react";
+
+function Projects() {
+  const [showGame, setShowGame] = useState(false);
+
   const projects = [
     {
       title: "Online Retail Shopping Management",
@@ -12,15 +16,15 @@ export default function Projects() {
       description:
         "A personal portfolio website to showcase my skills and projects.",
       image: "/portfolio.png",
-      tech: ["React", "Tailwind CSS", "JavaScript"],
+      tech: ["React", "Tailwind CSS"],
     },
     {
       title: "Task Management App",
       description:
-        "A web app to manage tasks, track progress, and improve productivity.",
+        "A web app to manage daily tasks with features like add, delete, and mark as completed.",
       image: "/task.png",
-      tech: ["React", "Node.js", "Express", "MongoDB"],
-    },
+      tech: ["React", "JavaScript", "CSS"],
+    }
   ];
 
   return (
@@ -33,7 +37,6 @@ export default function Projects() {
             key={index}
             className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
           >
-            {/* Image */}
             <img
               src={project.image}
               alt={project.title}
@@ -47,7 +50,6 @@ export default function Projects() {
 
               <p className="text-gray-400 mb-4">{project.description}</p>
 
-              {/* Tech */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
                   <span
@@ -58,15 +60,6 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
-
-              {/* Buttons */}
-              <div className="flex gap-4">
-                <a href={project.github} target="_blank" rel="noreferrer">
-                  <button className="border px-4 py-2 rounded hover:bg-gray-700">
-                    GitHub
-                  </button>
-                </a>
-              </div>
             </div>
           </div>
         ))}
@@ -74,3 +67,5 @@ export default function Projects() {
     </section>
   );
 }
+
+export default Projects;
