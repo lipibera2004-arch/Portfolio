@@ -1,47 +1,75 @@
+import myPhoto from '../assets/myphoto.jpg';
+import { FaLinkedin, FaInstagram, FaGithub } from 'react-icons/fa';
+
 export default function Home() {
   return (
-    <section
-      id="home"
-      className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white flex items-center justify-center pt-16"
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-6xl font-bold mb-4">
-              Hello, I am <span className="text-blue-400">Lipi Bera</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8">
-              B.Sc. Computer Science (Hons.) Student | Aspiring Web Developer
-            </p>
-            <p className="text-lg text-gray-400 mb-8 leading-relaxed max-w-lg">
-              Passionate about creating beautiful, functional, and user-friendly web applications. Currently exploring modern technologies and best practices in web development.
-            </p>
-            <div className="flex gap-4">
-              <button
-                onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition duration-300 transform hover:scale-105"
-              >
+    <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white px-4">
+
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
+
+        {/* LEFT */}
+        <div className="text-center md:text-left">
+
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Hi, I'm Lipi Bera
+          </h1>
+
+          <p className="text-lg font-bold text-gray-300 mb-4">
+            B.Sc. Computer Science (Hons.) Student | Aspiring Web Developer
+          </p>
+
+          <p className="text-gray-400 mb-6 max-w-md">
+            Passionate about creating beautiful, functional, and user-friendly web applications.
+            Currently exploring modern technologies and best practices in web development.
+          </p>
+
+          {/* Buttons */}
+          <div className="flex gap-4 justify-center md:justify-start mb-6">
+
+            <a href="#contact">
+              <button className="bg-pink-500 px-6 py-2 rounded-lg hover:bg-pink-600 transition">
                 Get In Touch
               </button>
-              <button
-                onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
-                className="px-8 py-3 bg-gray-700 hover:bg-gray-600 rounded-lg font-semibold transition duration-300 transform hover:scale-105"
-              >
+            </a>
+
+            <a href="#projects">
+              <button className="border border-pink-500 px-6 py-2 rounded-lg hover:bg-pink-500 transition">
                 View My Work
               </button>
-            </div>
+            </a>
+
           </div>
-          <div className="hidden md:flex justify-center items-center">
-            <div className="relative w-64 h-64 animate-bounce-slow">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur-3xl opacity-40"></div>
-              <div className="absolute inset-0 bg-gradient-to-b from-blue-400 to-blue-600 rounded-full opacity-30"></div>
-              <div className="absolute inset-4 bg-gray-800 rounded-full flex items-center justify-center">
-                <span className="text-4xl">👨‍💻</span>
-              </div>
-            </div>
+
+          {/* Social Icons */}
+          <div className="flex gap-6 justify-center md:justify-start text-2xl">
+
+            <a href="https://www.linkedin.com/in/lipi-bera-32b2b7282" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin />
+            </a>
+
+            <a href="https://www.instagram.com/lipi_bera96" target="_blank" rel="noopener noreferrer">
+              <FaInstagram />
+            </a>
+
+            <a href="https://github.com/lipibera2004-arch" target="_blank" rel="noopener noreferrer">
+              <FaGithub />
+            </a>
+
           </div>
+
         </div>
+
+        {/* RIGHT - IMAGE */}
+        <div>
+          <img
+            src={myPhoto}
+            alt="Lipi Bera"
+            className="w-60 h-60 md:w-72 md:h-72 object-cover rounded-full border-4 border-pink-500 shadow-lg"
+          />
+        </div>
+
       </div>
-    </section>
+
+    </div>
   );
 }

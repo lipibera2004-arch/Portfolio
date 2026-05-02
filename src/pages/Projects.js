@@ -1,72 +1,75 @@
-const ProjectCard = ({ title, description, technologies, image }) => {
-  return (
-    <div className="group bg-gray-800 rounded-lg overflow-hidden hover:shadow-2xl transition duration-300 transform hover:scale-105 border border-gray-700 hover:border-blue-500">
-      <div className="relative overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 h-48 flex items-center justify-center">
-        <span className="text-6xl">{image}</span>
-      </div>
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-blue-400 mb-3">{title}</h3>
-        <p className="text-gray-300 mb-4 leading-relaxed">{description}</p>
-        <div className="mb-6 flex flex-wrap gap-2">
-          {technologies.map((tech, index) => (
-            <span
-              key={index}
-              className="px-3 py-1 bg-gray-700 text-gray-200 rounded-full text-sm"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        <button className="w-full px-4 py-2 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition duration-300 transform hover:scale-105">
-          View Project
-        </button>
-      </div>
-    </div>
-  );
-};
-
 export default function Projects() {
-  const projectsData = [
+  const projects = [
     {
-      title: 'Online Retail Shopping Management System',
+      title: "Online Retail Shopping Management",
       description:
-        'A mini project developed on localhost that manages online shopping operations such as product listing, user interaction, and order handling.',
-      technologies: ['React', 'JavaScript', 'HTML', 'CSS'],
-      image: '🛍️',
+        "A full-stack web application for managing products, orders, customers, and inventory.",
+      image: "/retail.png",
+      tech: ["React", "Node.js", "Express", "MongoDB"],
     },
     {
-      title: 'Portfolio Website',
+      title: "Portfolio Website",
       description:
-        'A modern, responsive portfolio website showcasing my skills, projects, and experience with smooth animations and clean design.',
-      technologies: ['React', 'Tailwind CSS', 'JavaScript'],
-      image: '💼',
+        "A personal portfolio website to showcase my skills and projects.",
+      image: "/portfolio.png",
+      tech: ["React", "Tailwind CSS", "JavaScript"],
     },
     {
-      title: 'Task Management App',
+      title: "Task Management App",
       description:
-        'A simple and intuitive task management application with add, delete, and mark complete functionality.',
-      technologies: ['React', 'JavaScript', 'Local Storage'],
-      image: '✅',
+        "A web app to manage tasks, track progress, and improve productivity.",
+      image: "/task.png",
+      tech: ["React", "Node.js", "Express", "MongoDB"],
     },
   ];
 
   return (
-    <section id="projects" className="py-16 bg-gray-800 text-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold mb-12 text-center">
-          My <span className="text-blue-400">Projects</span>
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projectsData.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              description={project.description}
-              technologies={project.technologies}
-              image={project.image}
+    <section id="projects" className="bg-gray-950 text-white py-16 px-4">
+      <h2 className="text-4xl font-bold text-center mb-10">My Projects</h2>
+
+      <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className="bg-gray-900 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
+          >
+            {/* Image */}
+            <img
+              src={project.image}
+              alt={project.title}
+              className="w-full h-48 object-cover"
             />
-          ))}
-        </div>
+
+            <div className="p-5">
+              <h3 className="text-xl font-semibold text-pink-400 mb-2">
+                {project.title}
+              </h3>
+
+              <p className="text-gray-400 mb-4">{project.description}</p>
+
+              {/* Tech */}
+              <div className="flex flex-wrap gap-2 mb-4">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="bg-gray-800 px-2 py-1 rounded text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex gap-4">
+                <a href={project.github} target="_blank" rel="noreferrer">
+                  <button className="border px-4 py-2 rounded hover:bg-gray-700">
+                    GitHub
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
