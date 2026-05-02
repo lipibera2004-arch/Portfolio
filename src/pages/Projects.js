@@ -1,9 +1,4 @@
-import React, { useState } from "react";
-
-function Projects() {
-  const [showGame, setShowGame] = useState(false);
-
-  const projects = [
+ const projects = [
     {
       title: "Online Retail Shopping Management",
       description:
