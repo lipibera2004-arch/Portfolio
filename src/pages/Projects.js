@@ -1,25 +1,25 @@
- const projects = [
+import React from "react";
+
+const Projects = () => {
+  const projects = [
     {
       title: "Online Retail Shopping Management",
-      description:
-        "A full-stack web application for managing products, orders, customers, and inventory.",
+      description: "A full-stack web application for managing products, orders, customers, and inventory.",
       image: "/retail.png",
       tech: ["React", "Node.js", "Express", "MongoDB"],
     },
     {
       title: "Portfolio Website",
-      description:
-        "A personal portfolio website to showcase my skills and projects.",
+      description: "A personal portfolio website to showcase my skills and projects.",
       image: "/portfolio.png",
       tech: ["React", "Tailwind CSS"],
     },
     {
       title: "Task Management App",
-      description:
-        "A web app to manage daily tasks with features like add, delete, and mark as completed.",
+      description: "A web app to manage daily tasks with features like add, delete, and mark as completed.",
       image: "/task.png",
       tech: ["React", "JavaScript", "CSS"],
-    }
+    },
   ];
 
   return (
@@ -61,6 +61,6 @@
       </div>
     </section>
   );
-}
+};
 
 export default Projects;
